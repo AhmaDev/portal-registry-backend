@@ -25,6 +25,9 @@ exports.createByFile = (req, res) => {
 };
 
 exports.findBySearch = (req, res) => {
+
+   console.log("req : ",req.query)
+
    let filtered = {};
    let exitCauseTitle = "";
 

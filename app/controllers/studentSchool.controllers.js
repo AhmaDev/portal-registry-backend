@@ -13,7 +13,7 @@ exports.create = (req, res) => {
       documentDate: req.body.documentDate,
       totalMarks: parseInt(req.body.totalMarks) * 1,
       average: req.body.average * 1,
-      documentNumber: parseInt(req.body.documentNumber) * 1,
+      documentNumber: parseInt(String(req.body.documentNumber)) * 1,
       documentDate: req.body.documentDate,
       lessonCount: parseInt(req.body.lessonCount) * 1,
       directorate: req.body.directorate,
@@ -25,7 +25,7 @@ exports.create = (req, res) => {
       certificateStatusId: req.body.certificateStatusId,
       certificateStatusDescription: req.body.certificateStatusDescription,
    });
-
+   console.log("request : ",req.body)
    StudentSchool.create(req.body, (err, data) => {
       if (err) res.status(err.code).send(err);
       else {

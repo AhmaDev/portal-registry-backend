@@ -281,13 +281,11 @@ Student.getBySearch = async (conditions, exitCauseTitle, result) => {
             studentSchool: {
                include: {
                   yearStudy: true,
-                  // passType: true,
-                  // certificateStatus: true,
-                  // studySubCategory: {
-                  //    include: {
-                  //       studyCategory: true,
-                  //    },
-                  // },
+                  studySubCategory: {
+                     include: {
+                        studyCategory: true,
+                     },
+                  },
                },
             },
             studentGraduation: {
